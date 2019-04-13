@@ -33,6 +33,7 @@ namespace DMS.Controllers
             }
 
             var delivery = await _context.Delivery
+                .Include(s => s.Stock)
                 .FirstOrDefaultAsync(m => m.DeliveryID == id);
             if (delivery == null)
             {

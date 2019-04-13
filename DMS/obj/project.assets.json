@@ -12540,11 +12540,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\DMS\\Latest\\DMS\\DMS\\DMS\\DMS.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\DMS\\DMS\\DMS.csproj",
       "projectName": "DMS",
-      "projectPath": "C:\\Users\\User\\Desktop\\DMS\\Latest\\DMS\\DMS\\DMS\\DMS.csproj",
+      "projectPath": "C:\\Users\\User\\Desktop\\DMS\\DMS\\DMS.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\DMS\\Latest\\DMS\\DMS\\DMS\\obj\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\DMS\\DMS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
