@@ -34,7 +34,7 @@ namespace DMS.Controllers
             }
 
             var stock = await _context.Stocks
-                .Include(s => s.Delivery)
+                //.Include(s => s.Delivery)
                 .FirstOrDefaultAsync(m => m.StockID == id);
             if (stock == null)
             {
