@@ -10,5 +10,7 @@ namespace DMS.Models
         public int ShopID { get; set; }
         public string Name { get; set; }
         public string Contact { get; set; }
+
+        public ICollection<Delivery> Deliveries { get; set; }
     }
 }

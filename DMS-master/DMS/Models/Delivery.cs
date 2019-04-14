@@ -23,5 +23,8 @@ namespace DMS.Models
         [Required(ErrorMessage = "The quantity is required")]
         [Range(1, 2000)]
         public int Quantity { get; set; }
+
+        public Stock Stocks { get; set; }
+        public Shop Shops { get; set; }
     }
 }
