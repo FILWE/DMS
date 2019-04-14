@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DMS.Models;
+using DMS.Data;
 
 namespace DMS.Controllers
 {
@@ -21,7 +22,7 @@ namespace DMS.Controllers
         // GET: Shops
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Shop.ToListAsync());
+            return View(await _context.Shops.ToListAsync());
         }
 
         // GET: Shops/Details/5
@@ -32,7 +33,7 @@ namespace DMS.Controllers
                 return NotFound();
             }
 
-            var shop = await _context.Shop
+            var shop = await _context.Shops
                 .FirstOrDefaultAsync(m => m.ShopID == id);
             if (shop == null)
             {
@@ -72,7 +73,7 @@ namespace DMS.Controllers
                 return NotFound();
             }
 
-            var shop = await _context.Shop.FindAsync(id);
+            var shop = await _context.Shops.FindAsync(id);
             if (shop == null)
             {
                 return NotFound();
@@ -123,7 +124,7 @@ namespace DMS.Controllers
                 return NotFound();
             }
 
-            var shop = await _context.Shop
+            var shop = await _context.Shops
                 .FirstOrDefaultAsync(m => m.ShopID == id);
             if (shop == null)
             {
@@ -138,15 +139,15 @@ namespace DMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var shop = await _context.Shop.FindAsync(id);
-            _context.Shop.Remove(shop);
+            var shop = await _context.Shops.FindAsync(id);
+            _context.Shops.Remove(shop);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ShopExists(int id)
         {
-            return _context.Shop.Any(e => e.ShopID == id);
+            return _context.Shops.Any(e => e.ShopID == id);
         }
     }
 }

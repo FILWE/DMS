@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using DMS.Models;
 
-namespace DMS.Models
+namespace DMS.Data
 {
     public class DMSContext : DbContext
     {
@@ -14,10 +14,17 @@ namespace DMS.Models
         {
         }
 
-        public DbSet<DMS.Models.Delivery> Delivery { get; set; }
+        public DbSet<DMS.Models.Delivery> Deliveries { get; set; }
 
-        public DbSet<DMS.Models.Shop> Shop { get; set; }
+        public DbSet<DMS.Models.Shop> Shops { get; set; }
 
-        public DbSet<DMS.Models.Stock> Stock { get; set; }
+        public DbSet<DMS.Models.Stock> Stocks { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Delivery>().ToTable("Delivery");
+            modelBuilder.Entity<Shop>().ToTable("Shop");
+            modelBuilder.Entity<Stock>().ToTable("Stock");
+        }
     }
 }

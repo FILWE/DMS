@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DMS.Models;
+using DMS.Data;
 
 namespace DMS.Controllers
 {
@@ -21,7 +22,7 @@ namespace DMS.Controllers
         // GET: Stocks
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Stock.ToListAsync());
+            return View(await _context.Stocks.ToListAsync());
         }
 
         // GET: Stocks/Details/5
@@ -32,7 +33,7 @@ namespace DMS.Controllers
                 return NotFound();
             }
 
-            var stock = await _context.Stock
+            var stock = await _context.Stocks
                 .FirstOrDefaultAsync(m => m.StockID == id);
             if (stock == null)
             {
@@ -72,7 +73,7 @@ namespace DMS.Controllers
                 return NotFound();
             }
 
-            var stock = await _context.Stock.FindAsync(id);
+            var stock = await _context.Stocks.FindAsync(id);
             if (stock == null)
             {
                 return NotFound();
@@ -123,7 +124,7 @@ namespace DMS.Controllers
                 return NotFound();
             }
 
-            var stock = await _context.Stock
+            var stock = await _context.Stocks
                 .FirstOrDefaultAsync(m => m.StockID == id);
             if (stock == null)
             {
@@ -138,15 +139,15 @@ namespace DMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var stock = await _context.Stock.FindAsync(id);
-            _context.Stock.Remove(stock);
+            var stock = await _context.Stocks.FindAsync(id);
+            _context.Stocks.Remove(stock);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool StockExists(int id)
         {
-            return _context.Stock.Any(e => e.StockID == id);
+            return _context.Stocks.Any(e => e.StockID == id);
         }
     }
 }

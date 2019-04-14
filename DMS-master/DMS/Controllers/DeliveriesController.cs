@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DMS.Models;
+using DMS.Data;
 
 namespace DMS.Controllers
 {
@@ -21,7 +22,7 @@ namespace DMS.Controllers
         // GET: Deliveries
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Delivery.ToListAsync());
+            return View(await _context.Deliveries.ToListAsync());
         }
 
         // GET: Deliveries/Details/5
@@ -32,7 +33,7 @@ namespace DMS.Controllers
                 return NotFound();
             }
 
-            var delivery = await _context.Delivery
+            var delivery = await _context.Deliveries
                 .Include(s => s.StockID)
                 .FirstOrDefaultAsync(m => m.DeliveryID == id);
             if (delivery == null)
@@ -73,7 +74,7 @@ namespace DMS.Controllers
                 return NotFound();
             }
 
-            var delivery = await _context.Delivery.FindAsync(id);
+            var delivery = await _context.Deliveries.FindAsync(id);
             if (delivery == null)
             {
                 return NotFound();
@@ -124,7 +125,7 @@ namespace DMS.Controllers
                 return NotFound();
             }
 
-            var delivery = await _context.Delivery
+            var delivery = await _context.Deliveries
                 .FirstOrDefaultAsync(m => m.DeliveryID == id);
             if (delivery == null)
             {
@@ -139,15 +140,15 @@ namespace DMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var delivery = await _context.Delivery.FindAsync(id);
-            _context.Delivery.Remove(delivery);
+            var delivery = await _context.Deliveries.FindAsync(id);
+            _context.Deliveries.Remove(delivery);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool DeliveryExists(int id)
         {
-            return _context.Delivery.Any(e => e.DeliveryID == id);
+            return _context.Deliveries.Any(e => e.DeliveryID == id);
         }
     }
 }
