@@ -14,7 +14,7 @@ namespace DMS.Models
         public int ShopID { get; set; }
 
         [DisplayName("Stock ID")]
-        public int Stock { get; set; }
+        public int StockID { get; set; }
 
         [DataType(DataType.Date)]
         [Required(ErrorMessage = "The delivery date is required")]

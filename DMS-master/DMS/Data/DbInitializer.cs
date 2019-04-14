@@ -43,7 +43,7 @@ namespace DMS.Data
 
             var delivery = new Delivery[]
             {
-            new Delivery{DeliveryID = 1,Stock = 1,ShopID = 1,DeliveryDate = DateTime.Parse("2005-09-01"), Quantity = 10 },
+            new Delivery{DeliveryID = 1,StockID = 1,ShopID = 1,DeliveryDate = DateTime.Parse("2005-09-01"), Quantity = 10 },
 
 
             };
