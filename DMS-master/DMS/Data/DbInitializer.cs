@@ -15,23 +15,23 @@ namespace DMS.Data
             Console.WriteLine("i came to initialise");
 
 
-            /* if (context.Stocks.Any())
+             if (context.Stocks.Any())
              {
                  return;   // DB has been seeded
-             }*/
+             }
 
             var stock = new Stock[]
             {
-            new Stock{Description = "Coke",Price = 10.0},
-            new Stock{Description = "Fanta Pineapple",Price = 11.0},
-            new Stock{Description = "Fanta Grape",Price = 11.0},
-            new Stock{Description = "Fanta Orange",Price = 11.0},
-            new Stock{Description = "Sparletta Pinenut",Price = 8.0},
-            new Stock{Description = "Sparletta Raspberry",Price = 8.0},
-            new Stock{Description = "Sparletta Iron Brew",Price = 8.5},
-            new Stock{Description = "Sparletta Creme Soda",Price = 8.5},
-            new Stock{Description = "Schweppes Lemon Twist",Price = 9},
-            new Stock{Description = "Schweppes Granadilla Twist",Price = 9},
+            new Stock{Description = "Coke",Price = 10.0,ManufacturingDate = DateTime.Parse("2017-01-01"),StockInDate = DateTime.Parse("2018-04-01") },
+            new Stock{Description = "Fanta Pineapple",Price = 11.0,ManufacturingDate = DateTime.Parse("2017-01-01"),StockInDate = DateTime.Parse("2018-04-01")},
+            new Stock{Description = "Fanta Grape",Price = 11.0,ManufacturingDate = DateTime.Parse("2017-01-01"),StockInDate = DateTime.Parse("2018-04-01")},
+            new Stock{Description = "Fanta Orange",Price = 11.0,ManufacturingDate = DateTime.Parse("2017-01-01"),StockInDate = DateTime.Parse("2018-04-01")},
+            new Stock{Description = "Sparletta Pinenut",Price = 8.0,ManufacturingDate = DateTime.Parse("2017-01-01"),StockInDate = DateTime.Parse("2018-04-01")},
+            new Stock{Description = "Sparletta Raspberry",Price = 8.0,ManufacturingDate = DateTime.Parse("2017-01-01"),StockInDate = DateTime.Parse("2018-04-01")},
+            new Stock{Description = "Sparletta Iron Brew",Price = 8.5,ManufacturingDate = DateTime.Parse("2017-01-01"),StockInDate = DateTime.Parse("2018-04-01")},
+            new Stock{Description = "Sparletta Creme Soda",Price = 8.5,ManufacturingDate = DateTime.Parse("2017-01-01"),StockInDate = DateTime.Parse("2018-04-01")},
+            new Stock{Description = "Schweppes Lemon Twist",Price = 9,ManufacturingDate = DateTime.Parse("2017-01-01"),StockInDate = DateTime.Parse("2018-04-01")},
+            new Stock{Description = "Schweppes Granadilla Twist",Price = 9,ManufacturingDate = DateTime.Parse("2017-01-01"),StockInDate = DateTime.Parse("2018-04-01")},
 
 
             };
@@ -58,11 +58,11 @@ namespace DMS.Data
 
             var delivery = new Delivery[]
             {
-            new Delivery{StockID = 1,ShopID = 1,DeliveryDate = DateTime.Parse("2005-09-01"), Quantity = 10 },
-            new Delivery{StockID = 5,ShopID = 1,DeliveryDate = DateTime.Parse("2009-04-01"), Quantity = 20 },
-            new Delivery{StockID = 3,ShopID = 5,DeliveryDate = DateTime.Parse("2016-11-01"), Quantity = 60 },
+            new Delivery{StockID = 1,ShopID = 1,DeliveryDate = DateTime.Parse("2019-09-01"), Quantity = 10 },
+            new Delivery{StockID = 5,ShopID = 1,DeliveryDate = DateTime.Parse("2019-04-01"), Quantity = 20 },
+            new Delivery{StockID = 3,ShopID = 5,DeliveryDate = DateTime.Parse("2019-11-01"), Quantity = 60 },
             new Delivery{StockID = 9,ShopID = 3,DeliveryDate = DateTime.Parse("2019-04-09"), Quantity = 100 },
-            new Delivery{StockID = 7,ShopID = 4,DeliveryDate = DateTime.Parse("2018-09-21"), Quantity = 290 },
+            new Delivery{StockID = 7,ShopID = 4,DeliveryDate = DateTime.Parse("2019-09-21"), Quantity = 290 },
 
 
             };
